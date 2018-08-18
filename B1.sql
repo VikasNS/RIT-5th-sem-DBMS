@@ -46,3 +46,41 @@ INSERT INTO ACCOUNT(AccNo,SSN,Code,Balance) VALUES('A5',3,'B2',100000);
 INSERT INTO ACCOUNT(AccNo,SSN,Code,Balance) VALUES('A5',3,'B2',100000);
 INSERT INTO ACCOUNT(AccNo,SSN,Code,Balance) VALUES('A7',4,'B2',200000);
 
+BEGIN
+
+DBMS_OUTPUT.PUT_LINE('BRANCH');
+FOR i in (SELECT * FROM BRANCH)
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('Code:' || ' ' || i.Code || ' ' || 'Name:' || ' ' || i.Name || ' ' || 'Assets:' || ' ' || i.Assets);
+  END LOOP;
+
+DBMS_OUTPUT.PUT_LINE('');
+DBMS_OUTPUT.PUT_LINE('CUSTOMER');
+FOR i in (SELECT * FROM CUSTOMER)
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('SSN:' || ' ' || i.SSN ||  ' ' || 'Name:' || ' ' || i.Name || ' ' || 'Place:' || ' ' || i.Place);
+  END LOOP;
+
+DBMS_OUTPUT.PUT_LINE('');
+
+DBMS_OUTPUT.PUT_LINE('Accounts Table');
+FOR i in (SELECT * FROM ACCOUNT)
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('AccNo: '||i.AccNo || ' ' || 'SSN: ' || i.SSN || ' ' || 'Code: ' || i.Code || ' ' || 'Balance: ' || i.Balance);
+  END LOOP;
+
+FOR i in (SELECT * FROM ACCOUNT WHERE AccNo IN ('A1','A2','A3'))
+  LOOP
+    UPDATE ACCOUNT
+    SET BALANCE=0 where ACCNO=i.ACCNO;
+  END LOOP;
+
+DBMS_OUTPUT.PUT_LINE('');
+DBMS_OUTPUT.PUT_LINE('Updated Accounts Table');
+FOR i in (SELECT * FROM ACCOUNT)
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('AccNo: '||i.AccNo || ' ' || 'SSN: ' || i.SSN || ' ' || 'Code: ' || i.Code || ' ' || 'Balance: ' || i.Balance);
+  END LOOP;
+
+END;
+
