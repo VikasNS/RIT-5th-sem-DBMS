@@ -66,6 +66,7 @@ db.EMPLOYEE.insertMany(
 ]
 )
 
+db.createCollection('ASSIGNED_TO')
 db.ASSIGNED_TO.insertMany(
 [
 {
