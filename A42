@@ -1,0 +1,38 @@
+use A42
+db.createCollection('PART')
+db.PART.insertMany(
+[
+{'PNO': 1 ,'PNAME': 'Wheel'  ,'COLOUR':'Green'},
+{'PNO': 2 ,'PNAME': 'Wheel'  ,'COLOUR':'Brown'},
+{'PNO': 3 ,'PNAME': 'Steering' ,'COLOUR':'Brown'},
+{'PNO': 4 ,'PNAME': 'Steering' ,'COLOUR':'Black'},
+{'PNO': 5 ,'PNAME': 'Helmet' ,'COLOUR':'Black'},
+{'PNO': 6 ,'PNAME': 'Helmet' ,'COLOUR':'Brown'},
+{'PNO': 7 ,'PNAME': 'Bolts' ,'COLOUR':'Brown'},
+{'PNO': 8 ,'PNAME': 'Bolts' ,'COLOUR':'Green'}
+]
+)
+
+db.createCollection('SHIPMENT')
+db.PART.insertMany(
+[
+{'PNO':1,'WHO':1,'WNAME':,'QUANTITY':11,'DATE':},
+{'PNO':2,'WHO':1,'WNAME':,'QUANTITY':22,'DATE':},
+{'PNO':3,'WHO':1,'WNAME':,'QUANTITY':22,'DATE':},
+{'PNO':4,'WHO':2,'WNAME':,'QUANTITY':33,'DATE':},
+{'PNO':5,'WHO':2,'WNAME':,'QUANTITY':11,'DATE':},
+{'PNO':6,'WHO':3,'WNAME':,'QUANTITY':19,'DATE':},
+{'PNO':7,'WHO':3,'WNAME':,'QUANTITY':15,'DATE':},
+{'PNO':8,'WHO':3,'WNAME':,'QUANTITY':10,'DATE':},
+
+
+
+
+]
+)
+
+
+
+
+
+
