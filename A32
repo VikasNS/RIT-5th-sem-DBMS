@@ -13,9 +13,6 @@ db.BOAT.insertMany(
 ]
 )
 
-
-
-
 db.createCollection('RESERVES')
 db.RESERVES.insertMany(
 [
@@ -28,3 +25,13 @@ db.RESERVES.insertMany(
 {'BID':7,'SNAME':'Ram','SID':1,'DAY':'Monday'},
 ]
 )
+db.BOAT.find({'COLOUR':'White'})
+
+db.RESERVES.aggregate([
+{$match:{"SNAME":"John"}},
+{$lookup:{"from":"BOAT","localField":"BID","foreignField":"BID","as":"boats"}},
+{$unwind:"$boats"},
+{$group:{"_id":null,total:{$sum:1}}},
+{$project:{"_id":0}}])
+
+
