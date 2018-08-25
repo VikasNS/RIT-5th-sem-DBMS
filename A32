@@ -2,14 +2,14 @@ use A32
 db.createCollection('BOAT')
 db.BOAT.insertMany(
 [
-{'BID':1,'BNAME':'Aarav','COLOUR':'Green'},
+{'BID':1,'BNAME':'Aarav','COLOUR':'White'},
 {'BID':2,'BNAME':'Vivaan','COLOUR':'Brown'},
 {'BID':3,'BNAME':'Vihaan','COLOUR':'Brown'},
 {'BID':4,'BNAME':'Aditya','COLOUR':'Black'},
-{'BID':5,'BNAME':'Reyansh','COLOUR':'Black'},
+{'BID':5,'BNAME':'Reyansh','COLOUR':'White'},
 {'BID':6,'BNAME':'Sai','COLOUR':'Brown'},
 {'BID':7,'BNAME':'Muhammad','COLOUR':'Brown'},
-{'BID':8,'BNAME':'Vineeth','COLOUR':'Green'}
+{'BID':8,'BNAME':'Vineeth','COLOUR':'White'}
 ]
 )
 
