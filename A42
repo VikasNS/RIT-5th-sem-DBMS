@@ -32,6 +32,8 @@ db.SHIPMENT.aggregate([{$match:{'WNAME':'R group'}},
 {$unwind:"$parts"},
 {$project:{"PARTS":"$parts","_id":0}}])
 
+db.SHIPMENT.aggregate([{$group:{"_id":"$WNAME",total:{"$sum":"$QUANTITY"}}}])
+
 
 
 
