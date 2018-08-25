@@ -14,22 +14,23 @@ db.PART.insertMany(
 )
 
 db.createCollection('SHIPMENT')
-db.PART.insertMany(
+db.SHIPMENT.insertMany(
 [
-{'PNO':1,'WHO':1,'WNAME':,'QUANTITY':11,'DATE':},
-{'PNO':2,'WHO':1,'WNAME':,'QUANTITY':22,'DATE':},
-{'PNO':3,'WHO':1,'WNAME':,'QUANTITY':22,'DATE':},
-{'PNO':4,'WHO':2,'WNAME':,'QUANTITY':33,'DATE':},
-{'PNO':5,'WHO':2,'WNAME':,'QUANTITY':11,'DATE':},
-{'PNO':6,'WHO':3,'WNAME':,'QUANTITY':19,'DATE':},
-{'PNO':7,'WHO':3,'WNAME':,'QUANTITY':15,'DATE':},
-{'PNO':8,'WHO':3,'WNAME':,'QUANTITY':10,'DATE':},
-
-
-
-
+{'PNO':1,'WHO':1,'WNAME':'R group','QUANTITY':11,'DATE':new Date("2015-01-25")},
+{'PNO':2,'WHO':1,'WNAME':'R group','QUANTITY':22,'DATE':new Date("2010-02-25")},
+{'PNO':3,'WHO':1,'WNAME':'R group','QUANTITY':22,'DATE':new Date("2014-02-05")},
+{'PNO':4,'WHO':2,'WNAME':'G group','QUANTITY':33,'DATE':new Date("2013-05-25")},
+{'PNO':5,'WHO':2,'WNAME':'G group','QUANTITY':11,'DATE':new Date("2011-01-25")},
+{'PNO':6,'WHO':3,'WNAME':'G group','QUANTITY':19,'DATE':new Date("2018-08-22")},
+{'PNO':7,'WHO':3,'WNAME':'B group','QUANTITY':15,'DATE':new Date("2017-03-25")},
+{'PNO':8,'WHO':3,'WNAME':'B group','QUANTITY':10,'DATE':new Date("2016-03-15")}
 ]
 )
+
+db.SHIPMENT.aggregate([{$match:{'WNAME':'R group'}},
+{$lookup:{"from":"PART","localField":"PNO","foreignField":"PNO","as":"parts"}},
+{$unwind:"$parts"},
+{$project:{"PARTS":"$parts","_id":0}}])
 
 
 
