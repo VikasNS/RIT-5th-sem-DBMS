@@ -31,3 +31,8 @@ db.SUPPLY.insertMany(
 {'SNO':2, 'SNAME':'Somu',' PNO':8,'ADDRESS':'10 Somnagar bangalore 20'}
 ]
 )
+
+db.PART.aggregate([{'$match':{'PNO':3}},
+{'$lookup':{"from":"SUPPLY","localField":"PNO","foreignField":"PNO","as":"suppliers"}},
+{"$unwind":"$suppliers"},
+{"$project":{"_id":0,"PNO":0,"PNAME":0,"COLOUR":0}}])
