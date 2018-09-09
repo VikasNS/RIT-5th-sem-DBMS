@@ -32,3 +32,25 @@ SELECT column_name,count(*) from table_name GROUP BY column_name
 
 /* To group and count no of no distinct items of a specific column in each group */
 SELECT count(column_name_to_count_the_no_of_distinct_values) from table_name GROUP BY column_name
+
+/* Between */
+SELECT column_name from table_name where column BETWEEN value_1 AND value_2
+
+/* ALL(and) and ANY(or)*/
+SELECT column_name from table_name where column_name > ALL(value1,value2,value3)
+SELECT column_name from table_name where column_name > ANY(value1,value2,value3)
+
+
+/* LIKE */
+% means one or more charecters
+_ means one charecter
+SELECT column_name from table_name where column_name like '%e%' 
+
+/* NULL */
+SELECT column_name from table_name where column_name is NULL
+SELECT column_name from table_name where column_name is NULL
+
+
+
+
+
