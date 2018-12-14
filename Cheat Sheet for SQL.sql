@@ -43,7 +43,7 @@ SELECT count(column_name_to_count_the_no_of_not_null_values) from table_name GRO
 SELECT column_name,count(*) from table_name GROUP BY column_name
 
 /* To group and count no of no distinct items of a specific column in each group */
-SELECT count(column_name_to_count_the_no_of_distinct_values) from table_name GROUP BY column_name
+SELECT count(DISTINCT column_name_to_count_the_no_of_distinct_values) from table_name GROUP BY column_name
 
 /* Between */
 SELECT column_name from table_name where column BETWEEN value_1 AND value_2
