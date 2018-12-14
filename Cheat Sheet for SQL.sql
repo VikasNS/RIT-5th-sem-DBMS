@@ -13,15 +13,25 @@ CONSTRAINT fk_c1_name FORIEGN KEY (column_name) REFERENCES other_table_name(othe
 DROP TABLE table_name cascade constraints;
 
 /* To insert a row into the table */
-
 INSERT INTO table_name (column_name1, column_name2, column_name3) VALUES(value_1,value_2,value_3);
+
+/* Rename Table */
+ALTER TABLE table_name
+RENAME TO new_table_name;
+
+/* Rename Column */
+ALTER TABLE table_name
+RENAME COLUMN old_name TO new_name;
+
+/* Delete Column */
+ALTER TABLE table_name 
+DROP COLUMN column_name;
 
 /* To update a row */
 UPDATE table_name SET column_name = value WHERE other_column_name = 1;
 
 /* To delete a row */
 DELETE FROM table_name WHERE column_name = value
-
 
 /* To group and count no of items in each group */
 SELECT count(*) from table_name GROUP BY column_name
@@ -51,19 +61,6 @@ SELECT column_name from table_name where column_name like '%e%'
 /* NULL */
 SELECT column_name from table_name where column_name is NULL
 SELECT column_name from table_name where column_name is NULL
-
-/* Rename Table */
-ALTER TABLE table_name
-RENAME TO new_table_name;
-
-/* Rename Column */
-ALTER TABLE table_name
-RENAME COLUMN old_name TO new_name;
-
-/* Delete Column */
-ALTER TABLE table_name 
-DROP COLUMN column_name;
-
 
 
 
