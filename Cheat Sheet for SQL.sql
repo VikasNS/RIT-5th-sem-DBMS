@@ -7,6 +7,7 @@ CONSTRAINT pk_cl_name PRIMARY KEY (column_name1, column_name2),
 CONSTRAINT fk_c1_name FORIEGN KEY (column_name) REFERENCES other_table_name(other_column_name)
 );
 /* types NUMBER,VARCHAR2 */
+/* DATE type : TO_DATE('27-NOV-2011','DD-MON-YYYY') */
 
 
 /*Delete Table*/
