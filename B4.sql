@@ -46,7 +46,8 @@ BEGIN
    
   END LOOP;
     
-    DBMS_OUTPUT.PUT_LINE('No of Columns Inserterd ' || c1%rowcount);
-    close c1;
+   DBMS_OUTPUT.PUT_LINE('No of Columns Inserterd ' || c1%rowcount);
+   close c1;
+   
 END;
 /
