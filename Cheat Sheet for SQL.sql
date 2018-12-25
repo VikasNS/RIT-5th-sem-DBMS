@@ -110,11 +110,22 @@ varibale_name table_name%rowtype;
    
 /* Close Cursor */
    CLOSE c1;
-
-
-
-
-
+   
+/* Trigger */
+ CREATE [OR REPLACE ] TRIGGER trigger_name 
+ {BEFORE | AFTER | INSTEAD OF } 
+ {INSERT [OR] | UPDATE [OR] | DELETE} 
+ [OF col_name] /* Optional */
+ ON table_name 
+ [REFERENCING OLD AS o NEW AS n] 
+ [FOR EACH ROW] /* Optional */
+ WHEN (condition)  /* Optional */
+ BEGIN 
+   --- sql statements  
+ END;
+ 
+/* To get the current day */
+SELECT to_char(sysdate,'Dy') INTO rec FROM dual;
 
 
 
