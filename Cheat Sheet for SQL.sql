@@ -81,21 +81,36 @@ varibale_name table_name%rowtype;
 
 /* Funtions */
 
-%FOUND 
-/*Returns TRUE if an INSERT, UPDATE, or DELETE statement affected one or more rows 
-or a SELECT INTO statement returned one or more rows. Otherwise, it returns FALSE.*/
+	%FOUND 
+	/*Returns TRUE if an INSERT, UPDATE, or DELETE statement affected one or more rows 
+	or a SELECT INTO statement returned one or more rows. Otherwise, it returns FALSE.*/
 
-%NOTFOUND
-/*The logical opposite of %FOUND. It returns TRUE if an INSERT, UPDATE, or DELETE statement affected no rows,
-or a SELECT INTO statement returned no rows. Otherwise, it returns FALSE*/
-	
-%ISOPEN
-/*Always returns FALSE for implicit cursors, because Oracle closes the SQL cursor 
-automatically after executing its associated SQL statement.*/
+	%NOTFOUND
+	/*The logical opposite of %FOUND. It returns TRUE if an INSERT, UPDATE, or DELETE statement affected no rows,
+	or a SELECT INTO statement returned no rows. Otherwise, it returns FALSE*/
 
-%ROWCOUNT
-/*Returns the number of rows affected by an INSERT, 
-UPDATE, or DELETE statement, or returned by a SELECT INTO statement.*/
+	%ISOPEN
+	/*Always returns FALSE for implicit cursors, because Oracle closes the SQL cursor 
+	automatically after executing its associated SQL statement.*/
+
+	%ROWCOUNT
+	/*Returns the number of rows affected by an INSERT, 
+	UPDATE, or DELETE statement, or returned by a SELECT INTO statement.*/
+
+/* CURSOR DECLARATION inside declare*/
+  CURSOR C1
+    IS
+    SELECT * FROM PART100;
+
+/* Opening Cursor */
+   OPEN C1;
+
+/* Fetching a row from cursor */
+   FETCH C1 INTO my_row;
+   
+/* Close Cursor */
+   CLOSE c1;
+
 
 
 
