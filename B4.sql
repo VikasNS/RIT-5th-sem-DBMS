@@ -41,7 +41,6 @@ BEGIN
   
     FETCH C1 INTO my_row;
     EXIT when C1%NOTFOUND;
-   
     INSERT INTO PART200 (PNO,PNAME,COLOUR) VALUES(my_row.PNO,my_row.PNAME,my_row.COLOUR);
    
   END LOOP;
