@@ -67,5 +67,49 @@ SELECT column_name from table_name where column_name is NULL
 
 
 
+//////////////////// PL/SQL //////////////////////////////////////////
+
+/* Implicit Cursor */
+
+SELECT column_name INTO variable_name from table_name;
+
+/* Variable Declaration */
+
+variable_name table_name.column_name%type;
+varibale_name table_name%rowtype;
+
+
+/* Funtions */
+
+%FOUND 
+/*Returns TRUE if an INSERT, UPDATE, or DELETE statement affected one or more rows 
+or a SELECT INTO statement returned one or more rows. Otherwise, it returns FALSE.*/
+
+%NOTFOUND
+/*The logical opposite of %FOUND. It returns TRUE if an INSERT, UPDATE, or DELETE statement affected no rows,
+or a SELECT INTO statement returned no rows. Otherwise, it returns FALSE*/
+	
+%ISOPEN
+/*Always returns FALSE for implicit cursors, because Oracle closes the SQL cursor 
+automatically after executing its associated SQL statement.*/
+
+%ROWCOUNT
+/*Returns the number of rows affected by an INSERT, 
+UPDATE, or DELETE statement, or returned by a SELECT INTO statement.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
