@@ -20,6 +20,7 @@ BEGIN
     SYS.DBMS_OUTPUT.PUT_LINE('It is not a prime Number');
   END IF;
 END;
+/
 
 /*
 Credits: Crazy Programmer
