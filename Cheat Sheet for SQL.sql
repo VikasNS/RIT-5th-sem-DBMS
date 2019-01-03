@@ -128,6 +128,10 @@ varibale_name table_name%rowtype;
 SELECT to_char(sysdate,'Dy') INTO rec FROM dual;
 
 
+//////////////////// Mongo DB //////////////////////////////////////////
+
+
+
 
 
 
